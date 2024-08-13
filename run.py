@@ -1,6 +1,7 @@
 import asyncio
 import streamlit as st
 
+from app.common.utils import logger
 from app.helper.invoke_api import InvokeAPI
 from app.helper.generate_description import DescriptionGenerator
 
@@ -53,6 +54,7 @@ async def main():
         print()
 
     if is_button_clicked:
+        logger.info(f"[Instant Bid Description] Processing Instant Bid ID: {instant_bid_id}")
         with st.spinner("Fetching Instant Bid Data..."):
             api_response = invoke_api.invoke_instant_bid_api(instant_bid_id)
 
