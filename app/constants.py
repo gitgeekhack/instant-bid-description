@@ -1,6 +1,5 @@
 class Prompts:
-    PARAGRAPH_PROMPT = """
-    Generate a detailed and accurate paragraph description of maximum {num_chars} characters limit based on the user's input. Ensure precision and conciseness to deliver a focused and insightful description without losing any information from the input. Avoid any suggestions or misconceptions not presented in the input.
+    PARAGRAPH_PROMPT = """Generate a detailed and accurate paragraph description of maximum {num_chars} characters limit based on the user's input. Ensure precision and conciseness to deliver a focused and insightful description without losing any information from the input. Avoid any suggestions or misconceptions not presented in the input.
 
     Definition: A "bid for vehicle" is an offer made by a buyer to purchase a vehicle at a specific price during an auction. This involves making a monetary offer in a physical or online auction setting. Multiple buyers can place competitive bids, and the highest bid wins the vehicle. Some auctions have a reserve price, which is the minimum price set by the seller that bids must meet or exceed.
     
