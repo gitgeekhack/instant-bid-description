@@ -7,6 +7,8 @@ from langchain_aws import ChatBedrock
 from langchain_community.docstore.document import Document
 from langchain.chains.question_answering import load_qa_chain
 from langchain.text_splitter import RecursiveCharacterTextSplitter
+
+from app.common.utils import logger
 from app.constants import Messages, Prompts
 
 
@@ -55,7 +57,7 @@ class DescriptionGenerator:
         """ This method is used to format the data and prepare chunks """
 
         raw_text = json_data
-        print(f"Number of tokens: {self.paragraph_anthropic_llm.get_num_tokens(raw_text)}")
+        logger.info(f"Number of tokens: {self.paragraph_anthropic_llm.get_num_tokens(raw_text)}")
         text_splitter = RecursiveCharacterTextSplitter(chunk_size=10000, chunk_overlap=200)
         texts = text_splitter.split_text(raw_text)
         docs = [Document(page_content=t) for t in texts]

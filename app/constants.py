@@ -24,6 +24,11 @@ class Prompts:
     """
 
 
+class ClientCredentials:
+    CLIENT_ID = "bb531d31-8711-41aa-8bb3-0de6f989a97d"
+    CLIENT_SECRET = "de511c0f-a8f8-4c14-84e4-21ba8ae3d735"
+
+
 class ApiUrls:
     ACCESS_TOKEN = "https://staging-auth.peddle.com/identity-provider/connect/token"
     INSTANT_BID_JSON = "https://staging-service.peddle.com/buyer/v1/instant-bids/{instant_bid_id}"

@@ -2,6 +2,7 @@ import json
 import requests
 import traceback
 
+from app.common.utils import logger
 from app.constants import ApiUrls, ClientCredentials
 
 
@@ -27,7 +28,7 @@ class InvokeAPI:
                 raise Exception
 
         except Exception as e:
-            print(f"[Access Token][Error] {e} -> {traceback.format_exc()}")
+            logger.error(f"[Access Token][Error] {e} -> {traceback.format_exc()}")
             return None
 
     def __get_instant_bid_response(self, access_token, instant_bid_id):
@@ -53,7 +54,7 @@ class InvokeAPI:
                 raise Exception
 
         except Exception as e:
-            print(f"[Instant Bid API][Error] {e} -> {traceback.format_exc()}")
+            logger.error(f"[Instant Bid API][Error] {e} -> {traceback.format_exc()}")
             return None
 
     def invoke_instant_bid_api(self, instant_bid_id):
