@@ -14,7 +14,7 @@ class Prompts:
         - If `year_range_type` is "newer_than_from_year," interpret the "from_year" key as "after is equal to [year]."
     - Strictly Consider only all True values in the "vehicle_conditions" key with below conditions:
         - If "only_that_run_and_drive", "only_that_starts", "only_with_engine_and_transmission" and "only_with_all_tires" are True, describe the car as being in a "Drivable Condition" and without any further explanation or elaboration; Do not consider False values.
-        - If "only_that_run_and_drive" is False and "only_that_starts" is True, describe the car as being in "start condition".
+        - If "only_that_run_and_drive" is False and "only_that_starts" is True, describe the car as being in "start condition" and avoid referring to it as "running condition".
         - If there are no True values available please don't write anything about "vehicle_conditions".
         - If mileage is present in the vehicle conditions, It needs to be extracted.
     - Consider all makes, but if a make contains multiple models, include only one or two models. Trims and body_style within each model are not important.
