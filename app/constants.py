@@ -10,6 +10,15 @@ class Prompts:
     - Consider only_without_title, vehicle_titles, vehicle_uses, and vehicle_body_styles keys.
     - Consider is_pre_1981_vehicles_supported key without repeating it in another sentence. Do not make double sentence of is_pre_1981_vehicles_supported.
     - Consider year_range_type with below condition:
+        - If a "is_pre_1981_vehicles_supported":false is being mentioned, then show in output that it the vehicles before 1981 are not being included.
+        - If for example, "is_pre_1981_vehicles_supported":false
+                          "year_range_type":
+                          "code":"older_than_from_year"
+                          "description":"Older Than From Year"
+                          "from_year":2006
+                          is mentioned , then only talk about the year 2006 and dont mention anything related to 1981 as it is obvious statement
+        - Dont include two opposite/contradictory statements in the output                
+        - If another statement is similar in context with the 1981 statement, then dont include the statement related to 1981
         - If `year_range_type` is "older_than_from_year," interpret the "from_year" key as "before is equal to [year]."
         - If `year_range_type` is "newer_than_from_year," interpret the "from_year" key as "after is equal to [year]."
     - Strictly Consider only all True values in the "vehicle_conditions" key with below conditions:

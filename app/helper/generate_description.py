@@ -81,8 +81,6 @@ class DescriptionGenerator:
         lines = text.split('\n')
         if await self.__first_line_remove(lines[0], self.reference_description_first_last_line):
             lines = lines[1:]
-        if await self.__last_line_remove(lines[-1], self.reference_description_first_last_line):
-            lines = lines[:-1]
 
         modified_text = '\n'.join(lines)
         return modified_text
